@@ -2,6 +2,9 @@ marta_salary = 5673.87
 john_salary = 32453.44
 print(marta_salary, john_salary)
 
+
+
+
 john_age = 33
 marta_age = 31
 print("Джон:", john_age, "\n" "Марта:", marta_age)
