@@ -1,8 +1,8 @@
 # динамічний список покупок
 list_products = input("Введіть назви продуктів (через пробіл): ")
 product = list_products.split()
-temp_product = set(product)
-products = list(set(product))
+products = set(product)
+temp_product = list(set(product))
 if not any(temp_product):
     print("Ваш список порожній")
 else:
