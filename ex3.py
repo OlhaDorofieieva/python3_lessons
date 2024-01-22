@@ -1,7 +1,7 @@
 # динамічний список покупок
 list_products = input("Введіть назви продуктів (через пробіл): ")
 temp_product = list_products.split()
-print("Ваш список: ", ", ".join(temp_product))
+print('Ваш список: ', ", ".join(temp_product))
 # додавання видалення продуктів зі списку
 while len(temp_product) != 0:
     product_operation = input("Введіть ознаку (+/- для додавання/видалення) та продукт. Наприклад: +молоко або -хліб: ")
