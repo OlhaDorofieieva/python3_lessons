@@ -18,7 +18,7 @@ else:
 # ex2
 dict_names = {"Alex": "house", 'Max': 'Flat', 'Olha': 'Appartments', 'Oleh': 'Trench'}
 for name, position in dict_names.items():
-    print((name), "living in", (position))
+    print(name, "living in", position)
 
 #[print(f'{position} is living in {dict_names[position]}') for position in dict_names]
 
