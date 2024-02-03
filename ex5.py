@@ -32,29 +32,6 @@ while num_try < 3:
         if op == '/': print(f'result = {round((num1 / num2), 2)}')
         break
 
-
-
-# number_of_try = 0
-# while number_of_try < 3:
-#     try:
-#         user_input_arithm = input('Enter the arithmetic operation __ * or / __')
-#         user_input_arithm =user_input_arithm.split()
-#         if len(user_input_arithm) != 3:
-#             is_correct_number = True
-#             raise FormulaError('FormulaError, Try again enter a arithmetic operation')
-#
-#         if user_input_arithm[1] not in ['*','/']:
-#             #print(user_input_arithm[1])
-#             raise WrongOperatorError('WrongOperatorError, Try again enter a arithmetic operation')
-#         op = user_input_arithm[1]
-#         number1 = float(user_input_arithm[0])
-#         number2 = float(user_input_arithm[2])
-#
-#         if op == '*': print(f'result = {round((number1 * number2), 2)}')
-#         if op == '/': print(f'result = {round((number1 / number2), 2)}')
-#         number_of_try = 4
-#
-#
     except WrongOperatorError as mess:
         num_try +=1
         print(mess)
