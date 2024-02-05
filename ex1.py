@@ -41,3 +41,4 @@ print(all_list, "Кількість імен:", all_len)
 all_list_set = set(all_list)
 print(all_list_set)
 
+

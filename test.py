@@ -1,45 +1,48 @@
-class FormulaError(Exception):
-    pass
+# import json
+#
+# def increase_salary(department):
+#     if department["expenses"] < department["income"]:
+#         for employees in department["employees"]:
+#             employees["salary"] *= 1.1  # Збільшуємо зарплату на 10%
+#
+# def process_departments(data):
+#     for department in data["departments"]:
+#         increase_salary(department)
+#
+# def main():
+#     input_filename = "departments.json"
+#     output_filename = "new_costs.json"
+#
+#     with open(input_filename, "r") as file:
+#         data = json.load(file)
+#
+#     process_departments(data)
+#
+#     with open(output_filename, "w") as file:
+#         json.dump(data, file, indent=2)
+#
+# if __name__ == "__main__":
+#     main()
+#
 
-class WrongOperatorError(FormulaError):
-    pass
+def print_table(num, operation):
+    print(f'Table for {num} {operation}:')
+    for i in range(1, 11):
+        result = num * i
+        print(f'{num} {operation} {i} = {result}')
 
-def calculate_formula(formula):
-    try:
-        parts = formula.split()
-        if len(parts) != 3:
-            raise FormulaError("Формула повинна складатися з трьох елементів")
+def get_sum(num, operation):
+    print_table(num, operation)
+    # Розрахунок суми для чисел від 6 до 15 (включно)
+    result_sum = sum(num * i for i in range(6, 16))
+    return result_sum
 
-        num1 = float(parts[0])
-        operator = parts[1]
-        num2 = float(parts[2])
+if __name__ == '__main__':
+    num = int(input('Enter a number: '))
+    operation = input('Enter an operation (+ or *): ')
 
-        if operator not in ('*', '/'):
-            raise WrongOperatorError("Допустимі тільки оператори '*' та '/'")
-
-        if operator == '/' and num2 == 0:
-            raise ZeroDivisionError("Ділення на нуль неможливе")
-
-        result = num1 * num2 if operator == '*' else num1 / num2
-        return round(result, 2)
-
-    except ValueError as ve:
-        raise FormulaError(f"Помилка при конвертації у число: {ve}")
-    except FormulaError as fe:
-        raise fe
-    except Exception as e:
-        raise FormulaError(f"Невідома помилка: {e}")
-
-# Три спроби скористуватись калькулятором
-for _ in range(3):
-    try:
-        user_input = input("Введіть формулу (наприклад, 2 * 5): ")
-        result = calculate_formula(user_input)
-        print(f"Результат: {result}")
-        break  # Якщо все введено правильно, виходимо з циклу
-    except FormulaError as fe:
-        print(f"Помилка: {fe}")
-    except Exception as e:
-        print(f"Невідома помилка: {e}")
-else:
-    print("Закінчились спроби. Програма завершилась.")
+    if operation not in ('+', '*'):
+        print('Invalid operation. Please enter + or *.')
+    else:
+        total_sum = get_sum(num, operation)
+        print(f'Sum is {total_sum}')
