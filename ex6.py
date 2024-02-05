@@ -30,7 +30,7 @@ def print_table(number, operation):
 
 def get_sum(number,operation):
     print_table(number, operation)
-    # result_sum = sum(number + i for i in range(number + 1, number + 10))
+    # result_sum = sum(number + i for i in range(number + 1, number + 10)) - неправильно рахує
     for i in range(number + 1, number + 10):
         number = number + i
     return number
@@ -38,5 +38,4 @@ def get_sum(number,operation):
 if __name__ == '__main__':
     number = int(input("Введіть число: "))
     operation = input("Введіть операцію (* або +): ")
-    # total_sum = get_sum(number, operation)
     print(f'Sum is {get_sum(number, operation)}')
