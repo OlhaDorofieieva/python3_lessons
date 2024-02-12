@@ -1,14 +1,11 @@
 import json
-with open(department.json, "r") as f:
+with open(departments.json, "r") as f:
     data = json.load(f)
-
-
 
 def increase_salary(department):
     if department["expenses"] < department["income"]:
         for employees in department["employees"]:
             employees["salary"] *= 1.1  # Збільшуємо зарплату на 10%
-
 
 
 
