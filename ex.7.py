@@ -66,8 +66,17 @@ def fibonacci(n):
     if n <= 1:
         return n
     else:
-        return fibonacci(n - 1) + fibonacci(n - 2)
+        result = fibonacci(n - 1) + fibonacci(n - 2)
+        return result
 
-n = int(input("Введіть номер числа з послідовності Фібоначчі: "))
-print("Число Фібоначчі з номером", n, "дорівнює", fibonacci(n))
+def get_fibonacci(n):
+    return fibonacci(n)
 
+if __name__ == '__main__':
+    n = int(input("Введіть номер числа з послідовності Фібоначчі: "))
+    print("Число Фібоначчі з номером", n, "дорівнює", fibonacci(n))
+    print(get_fibonacci(1))
+    print(get_fibonacci(5))
+    print(get_fibonacci(10))
+    print(get_fibonacci(15))
+    print(get_fibonacci(20))
