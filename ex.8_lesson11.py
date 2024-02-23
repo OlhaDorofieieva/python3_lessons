@@ -1,3 +1,4 @@
+# ex.1
 import time
 
 class UserAccount:
@@ -79,6 +80,3 @@ account1.withdraw(5000)
 # The customer withdraw $1400.
 account1.withdraw(1400)
 account1.get_check_balance()
-
-
-
