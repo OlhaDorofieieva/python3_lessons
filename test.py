@@ -33,7 +33,7 @@ class UserAccount:
 
     def set_deposit(self, amount):  # function setter/метод для покладання грошей на рахунок
         self.__balance += amount
-        print(f"${amount} додано на ваш рахунок. Новий залишок: {self.__balance} грн.")
+        print(f"${amount} додано на ваш рахунок. Поточний баланс: {self.__balance} грн.")
 
     def withdraw(self, amount):  # метод для зняття грошей з рахунку
         if self.__balance >= amount:
@@ -59,6 +59,7 @@ UserAccount.get_current_time()
 # Input customer details
 account1 = UserAccount("James Bond", 9293922345, 123, "01-01-2024", 1000)
 account2 = UserAccount("Tom Hanks", 9293922346, 321, "02-01-2024", 2000)
+account3 = UserAccount('John Doe', '1234567890123456', '123', '12/24', 5000)
 
 print("Customer Details:")
 account1.get_print_customer_details()
@@ -70,7 +71,6 @@ account1.get_print_customer_details()
 # Current __balance is $1000.
 # $1000 has been deposited in your account.
 account1.set_deposit(1000)
-account1.get_check_balance()
 # Your current __balance $2000.
 # You want to withdraw $5000
 account1.withdraw(5000)

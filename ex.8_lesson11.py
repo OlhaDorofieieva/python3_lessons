@@ -71,11 +71,9 @@ account1.get_print_customer_details()
 # Current __balance is $1000.
 # $1000 has been deposited in your account.
 account1.set_deposit(1000)
-account1.get_check_balance()
 # Your current __balance $2000.
 # You want to withdraw $5000
 account1.withdraw(5000)
-# Output:
 # Insufficient balance.
 # The customer withdraw $1400.
 account1.withdraw(1400)
