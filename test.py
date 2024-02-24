@@ -1,84 +1,73 @@
-import time
+#ex.2
+from abc import ABC, abstractmethod
 
-class UserAccount:
-    TOTAL_OBJECTS = 0
+# абстракція
+class Transport(ABC):
+    max_speed = None
+    model = None
+    long = None
 
-    def __init__(self, name, card_number, cvv, date, balance):
-        UserAccount.TOTAL_OBJECTS = UserAccount.TOTAL_OBJECTS + 1
-        self.card_number = card_number
-        self.date = date
-        self.__balance = balance # приватний атрибут
-        self.name = name
-        self._cvv = cvv # захищений атрибут
-
-    def get_check_balance(self):  # function getter
-        print(f"Поточний баланс - ${self.__balance}.")
-
-    # або через @property
-    # @property
-    # def balance(self):  # гетер для доступу до приватного атрибута balance
-    #     return self.__balance
-
-    @classmethod  # a class method to create a total credit cards
-    def total_objects(cls):
-        print(f"Всього кредитних карт: {cls.TOTAL_OBJECTS}")
-
-
-    @staticmethod  # a staticmethod. The method prints script start time
-    def get_current_time():
-        t = time.localtime()
-        current_time = time.strftime("%H:%M:%S", t)
-        print(f"The Script was started : {current_time}")
-
-
-    def set_deposit(self, amount):  # function setter/метод для покладання грошей на рахунок
-        self.__balance += amount
-        print(f"${amount} додано на ваш рахунок. Поточний баланс: {self.__balance} грн.")
-
-    def withdraw(self, amount):  # метод для зняття грошей з рахунку
-        if self.__balance >= amount:
-            self.__balance -= amount
-            print(f'Знято {amount} грн. Залишок на рахунку: {self.__balance} грн.')
-        else:
-            print(f'Неможливо зняти {amount} грн. Недостатньо коштів на рахунку.')
+    @abstractmethod
+    def move(self):
+        pass
 
     @classmethod
-    def create_account(cls, name, card_number, cvv, date, balance):  # метод для створення об'єкту класу
-        return cls(name, card_number, cvv, date, balance)
+    @property
+    def get_class_name(cls):
+        return cls.__name__
 
-    def get_print_customer_details(self):  # function getter
-        print("Name:", self.name)
-        print("Card Number:", self.card_number)
-        print("CVV code:", self._cvv)
-        print("Date of opening:", self.date)
-        print(f"Balance: ${self.__balance}\n")
+class Water_Transport(Transport): # наслідування
 
+    def __init__(self, model: str, max_speed: int, color: str = None) -> None:
+        self.max_speed = max_speed
+        self.model = model
+        if color is None:  # "Default constructor called"
+            self.color = 'neutral'  # color does not matter
+        else:
+            self.color = color  # "Parameterized constructor called with color"
 
-# Print time start of script @staticmethod
-UserAccount.get_current_time()
-# Input customer details
-account1 = UserAccount("James Bond", 9293922345, 123, "01-01-2024", 1000)
-account2 = UserAccount("Tom Hanks", 9293922346, 321, "02-01-2024", 2000)
-account3 = UserAccount('John Doe', '1234567890123456', '123', '12/24', 5000)
+    @property
+    def move(self):
+        return "Sailing"
 
-print("Customer Details:")
-account1.get_print_customer_details()
-account2.get_print_customer_details()
-# Print total credit cards @classmethod
-account1.total_objects()
-print("=============================")
-account1.get_print_customer_details()
-# Current __balance is $1000.
-# $1000 has been deposited in your account.
-account1.set_deposit(1000)
-# Your current __balance $2000.
-# You want to withdraw $5000
-account1.withdraw(5000)
-# Output:
-# Insufficient balance.
-# The customer withdraw $1400.
-account1.withdraw(1400)
-account1.get_check_balance()
+    def __repr__(self):  # additional class description
+        return "Water_Transport_class_Transport"
 
+class Boat(Water_Transport): # наслідування
+    def __init__(self, model, max_speed, color, price):
+        super().__init__(model, max_speed, color) # Вызываем конструктор родительского класса
+        self.price = price
+        pass
 
+    @property
+    def move(self):
+        return super().move + ' and Swimming'
+class Cround_Transport(Transport): # наслідування
+    def __init__(self, engine):
+        self.__engine = engine # інкапсуляція
+
+    @property
+    def get_engine(self):
+        return self.__engine # інкапсуляція
+
+    @property
+    def move(self):
+        return "Driving"
+
+    def __repr__(self):  # additional class description
+        return 'Cround_Transport is child class'
+
+e1 = Water_Transport(model='Fiat', max_speed=200) # поліморфізм
+print(e1.__repr__())
+print(e1.model, e1.max_speed, e1.long, e1.color, e1.move)
+
+e12 = Cround_Transport(engine='diesel')
+e12.long = 232322
+print(e12.get_engine, e12.long, e12.model, e12.move, e12.max_speed)
+print(e12.__repr__())
+print(e12.get_class_name)
+
+boat1= Boat('BMW', 300, None, 10000) # поліморфізм
+print(boat1.move)
+print(boat1.model, boat1.max_speed, boat1.color, boat1.price, boat1.long)
 
