@@ -71,12 +71,31 @@ account1.get_print_customer_details()
 # Current __balance is $1000.
 # $1000 has been deposited in your account.
 account1.set_deposit(1000)
-account1.get_check_balance()
 # Your current __balance $2000.
 # You want to withdraw $5000
 account1.withdraw(5000)
-# Output:
 # Insufficient balance.
 # The customer withdraw $1400.
 account1.withdraw(1400)
 account1.get_check_balance()
+
+# ex.2
+
+from python3_lessons.Top.top import Top
+from python3_lessons.dress.dress import Dress
+from python3_lessons.Jacket.Jacket import Jacket
+from python3_lessons.underwear.underwear import Underwear
+
+top1 = Top('M', 'blue', 'short',)
+dress1 = Dress('L', 'red', 'short', 'casual')
+jacket1 = Jacket('M', 'green', 'long','outumn')
+Underwear1 = Underwear(100)
+Underwear1.size = "M"
+Underwear1.price = 200
+
+print(top1.__repr__())
+print(top1.get_print_details())
+print(dress1.get_print_details())
+print(jacket1.get_print_details())
+print(Underwear1.get_print_details())
+print(dress1.wear)
