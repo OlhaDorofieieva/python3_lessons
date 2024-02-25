@@ -87,10 +87,10 @@ from python3_lessons.Jacket.Jacket import Jacket
 from python3_lessons.underwear.underwear import Underwear
 
 top1 = Top('M', 'blue', 'short',)
-dress1 = Dress('L', 'red', 'short', 'casual')
+dress1 = Dress(size='L', color='yelow', length='short', style= 'casual')
 jacket1 = Jacket('M', 'green', 'long','outumn')
 Underwear1 = Underwear(100)
-Underwear1.size = "M"
+dress1.size = "XL"
 Underwear1.price = 200
 
 print(top1.__repr__())
