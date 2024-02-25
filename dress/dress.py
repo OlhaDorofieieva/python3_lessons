@@ -4,8 +4,7 @@ class Dress(Clothes):  # Підклас Верхнього Одягу
     def __init__(self, size, color, length, style):
         self.length = length
         self.style = style
-        self.size = size
-        self.color = color
+
 
     @property
     def wear(self):  # Реалізація методу носіння одягу
