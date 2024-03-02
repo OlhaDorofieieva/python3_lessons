@@ -5,12 +5,12 @@ class TxtAdaptor:
     def csv_to_json(file_path):
         with open(file_path) as f:
             res = f.readlines()
-            header = [k.strip() for k in res[0].split(',')]
-            rows = res[1:]
-            res_list = []
-            for row in rows:
-                row = row.strip().split(',')  # ['Alex', '25', 'Support', '1000']
-                res_list.append(dict(zip(header, row)))  # dict key from header, value from row
+        header = [k.strip() for k in res[0].split(',')]
+        rows = res[1:]
+        res_list = []
+        for row in rows:
+            row = row.strip().split(',')  # ['Alex', '25', 'Support', '1000']
+            res_list.append(dict(zip(header, row)))  # dict key from header, value from row
         return res_list
 
     @staticmethod

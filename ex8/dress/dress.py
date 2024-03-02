@@ -1,4 +1,4 @@
-from python3_lessons.Clothes.clothes import Clothes
+from python3_lessons.ex8.Clothes.clothes import Clothes
 
 class Dress(Clothes):  # Підклас Верхнього Одягу
     def __init__(self, size, color, length, style):

@@ -81,10 +81,10 @@ account1.get_check_balance()
 
 # ex.2
 
-from python3_lessons.Top.top import Top
-from python3_lessons.dress.dress import Dress
-from python3_lessons.Jacket.Jacket import Jacket
-from python3_lessons.underwear.underwear import Underwear
+from python3_lessons.ex8.Top import Top
+from python3_lessons.ex8.dress import Dress
+from python3_lessons.ex8.Jacket import Jacket
+from python3_lessons.ex8.underwear.underwear import Underwear
 
 top1 = Top('M', 'blue', 'short',)
 dress1 = Dress(size='L', color='yelow', length='short', style= 'casual')
