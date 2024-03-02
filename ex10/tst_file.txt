@@ -1,0 +1,6 @@
+name,last_name,age,salary
+Alex,Burgimski,50,5000
+Jems,Bond,60,6000
+Enryo,Morricone,70,7000
+Amadeus,Mozart,80,8000
+Vovan,Weligan,90,9000

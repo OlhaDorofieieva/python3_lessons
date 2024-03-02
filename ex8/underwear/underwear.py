@@ -1,4 +1,4 @@
-from python3_lessons.Clothes.clothes import Clothes
+from python3_lessons.ex8.Clothes.clothes import Clothes
 
 class Underwear(Clothes):  # Підклас нижнього одягу
     def __init__(self, price):

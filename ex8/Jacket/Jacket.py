@@ -1,4 +1,4 @@
-from python3_lessons.Top.top import Top
+from python3_lessons.ex8.Top.top import Top
 
 class Jacket(Top):  # Підклас Куртки (Верхнього Одягу)
     def __init__(self, size, color, sleeve_length, season):
