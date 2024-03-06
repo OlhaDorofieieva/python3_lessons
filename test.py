@@ -62,8 +62,8 @@ class ProxyReaderWriter:
             self._last_modified = os.path.getmtime(self.file_path)
 
 
-proxy_rw = ProxyReaderWriter(file_path='tst_file.txt')
-proxy_rw2 = ProxyReaderWriter(file_path='tst_file2.txt')
+proxy_rw = ProxyReaderWriter(file_path='ex10/tst_file.txt')
+proxy_rw2 = ProxyReaderWriter(file_path='ex10/tst_file2.txt')
 
 
 proxy_rw2.read()
