@@ -1,7 +1,5 @@
 import pytest
 
-
-
 class TestCar:
 
     # def setup_method(self):

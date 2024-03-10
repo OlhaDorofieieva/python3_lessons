@@ -1,0 +1,61 @@
+https://www.japan-guide.com/e/e7109.html
+
+1
+//H1[@class='page_title__title'][text()='Churaumi Aquarium']
+[class='page_title__title'] or .page_title__title
+2
+//SPAN[@class='dot_rating__label'][text()='Highly Recommended']
+span[class='dot_rating__label'] or span.dot_rating__label
+3
+//*[@class='breadcrumbs__crumb']/A[@href='/e/e7101.html'][text()='Okinawa Island']
+[class='breadcrumbs__crumb'] [href='/e/e7101.html'] or .breadcrumbs__crumb [href='/e/e7101.html']
+4
+//*[@class='place_details__small s-typography--links']/A[@href='/e/e7101.html'][text()='Okinawa Island']
+[class='place_details__small s-typography--links'] [href='/e/e7101.html']
+5
+//A[@class='sidebar_component__title'] [@href='/e/e7101.html'][text()='Okinawa Island']
+
+6
+//A[@class='on_page_nav__item__text'][text()='Intro']
+
+7
+//A[@class='on_page_nav__item__text'][text()='Get There']
+
+8
+//A[@class='on_page_nav__item__text'][text()='Hotels']
+
+9
+//INPUT[@id='booking-hotels-city-sidebar']
+input#booking-hotels-city-sidebar
+10
+//INPUT[@id='booking-hotels-checkin-sidebar']
+input#booking-hotels-checkin-sidebar
+11
+//*[@class='page_section__body s-typography']//*[text()='Okinawa Honto']
+
+12
+//a[text()='Okinawa Honto']/preceding-sibling::a[text()='Ocean Expo Park']
+section#section_get_there a[href='e7111.html']
+13
+//a[text()='Okinawa Honto']/preceding-sibling::a[text()='Ocean Expo Park']/preceding-sibling::a[text()='aquarium']
+
+14
+//*[contains(@id, 'aw0')]
+a#aw0 or a[id='aw0']
+15
+//*[@class='image__img lazyautosizes lazyloaded'] [@data-src='/g17/7109_04.jpg']
+[class='image__img lazyautosizes lazyloaded'][data-src='/g17/7109_04.jpg']
+16
+//*[contains(@id, 'aw0')]/img
+
+17
+//*[contains(@id, 'aw0')]/parent::*[@id='google_image_div']
+div#google_image_div a#aw0
+18
+//*[contains(@id, 'aw0')]/parent::*[@id='google_image_div']/child::div[@class='mute_panel']
+
+19
+//*[contains(@id, 'section_links')]/descendant::h4
+
+20
+//*[contains(@class, 'booking__content')]/descendant::button[@class='picker__x hidden']

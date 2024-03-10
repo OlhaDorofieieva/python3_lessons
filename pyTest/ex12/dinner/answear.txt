@@ -1,0 +1,49 @@
+//*[contains(@class,"small")]
+//orange[contains(@class,"small")]
+
+//bento/orange[contains(@class,"small")]
+//plate|//bento
+//plate/*
+
+//A/following-sibling::B
+//plate/following-sibling::apple
+
+//A/preceding-sibling::B
+//plate/preceding-sibling::pickle
+
+(A)[Index]
+(//pickle)[3]
+
+//plate/apple
+
+last()
+
+(//div)[last()]
+//plate/*[last()]
+
+//A[last()]
+//plate/apple[last()]
+
+//A[last()-N]
+//plate/apple[last()-1]
+
+//*[@attribute]
+//*[@for]
+
+//A[@attribute]
+//plate[@for]
+
+//*[@attribute='value']
+//*[@for='Vitaly']
+
+//B[@attribute='value' and @otherAttribute='other value']/A
+//plate[@id='fancy' and @for='Hanna']/apple
+
+//*[starts-with(@attribute,"value")]
+//*[starts-with(@for,"Sa")]
+
+//*[substring(@attribute, string-length(@attribute) - string-length('end text') +1) = 'end text']
+//*[ends-with(@for,"ato")]
+Or
+//*[substring(@for,string-length(@for) - string-length("ato")+1 ) = "ato"]
+
