@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 
 from ..page_objects.base_page import BasePage
 from ..page_objects.locators.login_page import Locators
-from ..page_objects.profile_page import ProfilePage
 
 
 class LoginPage(BasePage):
@@ -23,8 +22,17 @@ class LoginPage(BasePage):
         self._click_button((By.XPATH, self.locators.login_btn_xpath_locator))
         return self
 
+    def do_login(self, username, password):
+        self.set_user_name(username)
+        self.set_password(password)
+        self.click_login()
+        return self
+
     def find_error_message(self):
         self._element_is_visible(locator=(By.XPATH, self.locators.error_message_xpath_locator))
+        return self
+
+    def check_error_message(self):
         error_message = self.driver.find_element(by=By.XPATH, value=self.locators.error_message_xpath_locator)
         assert error_message.text == 'Неверный логин или пароль.'
         return self
@@ -33,7 +41,6 @@ class LoginPage(BasePage):
         self._click_button((By.XPATH, self.locators.forgot_your_password_xpath_locator))
         return self
 
-    def find_fild_email(self):
+    def find_field_email(self):
         self._element_is_visible(locator=(By.NAME, self.locators.email_input_name_locator))
-        self._element_is_visible(locator=(By.NAME, self.locators.username_input_name_locator))
         return self
