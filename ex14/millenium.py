@@ -21,10 +21,14 @@ def get_name_homeworld(link_homeworld):
 
 
 def main():
-    base_url = 'https://swapi.dev/api/starships/?search=Millennium Falcon'
-    ship_data = get_infoship(base_url)['results'][0]
-    infopilots = []
+    base_url = 'https://swapi.dev/api/starships/'
+    ships_data = get_infoship(base_url)['results']
 
+    for ship in ships_data:
+        if ship['name'] == 'Millennium Falcon':
+            ship_data = get_infoship(ship['url'])
+            break
+    infopilots = []
     for pilot_url in ship_data['pilots']:
         pilot_data = get_infopilots(pilot_url)
         infopilot = {
